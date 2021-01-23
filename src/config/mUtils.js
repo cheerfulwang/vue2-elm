@@ -145,6 +145,7 @@ export const showBack = callback => {
 
 
 /**
+ * 参数说明
  * 运动效果
  * @param {HTMLElement} element   运动对象，必选
  * @param {JSON}        target    属性：目标值，必选
@@ -155,7 +156,7 @@ export const showBack = callback => {
 export const animate = (element, target, duration = 400, mode = 'ease-out', callback) => {
     clearInterval(element.timer);
 
-    //判断不同参数的情况
+    //判断不同参数的情况，解决默认参数的匹配问题
     if (duration instanceof Function) {
         callback = duration;
         duration = 400;
